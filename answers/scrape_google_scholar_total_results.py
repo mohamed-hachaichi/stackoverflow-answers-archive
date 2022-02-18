@@ -1,3 +1,5 @@
+# https://stackoverflow.com/a/71061104/15164646
+
 from serpapi import GoogleSearch
 
 params = {
