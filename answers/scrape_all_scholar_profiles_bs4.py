@@ -1,4 +1,5 @@
 # https://stackoverflow.com/questions/41331881/prevent-503-error-when-scraping-google-scholar
+# https://replit.com/@DimitryZub1/prevent-503-error-when-scraping-google-scholar#main.py
 
 from bs4 import BeautifulSoup
 import requests, lxml, re
