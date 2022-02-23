@@ -1,3 +1,5 @@
+# https://stackoverflow.com/questions/41348670/get-year-of-first-publication-google-scholar
+
 from collections import namedtuple
 
 import requests
