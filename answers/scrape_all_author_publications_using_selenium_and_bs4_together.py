@@ -4,13 +4,13 @@
 import pandas as pd
 from bs4 import BeautifulSoup
 import requests, lxml, os
-from serpapi import GoogleSearch
+from serpapi import GoogleScholarSearch
 from urllib.parse import urlsplit, parse_qsl
 
 
 def bs4_scrape_articles():
     params = {
-        "user": "VxOmZDgAAAAJ",       # user-id
+        "user": "cp-8uaAAAAAJ",       # user-id
         "hl": "en",                   # language
         "gl": "us",                   # country to search from
         "cstart": 0,                  # articles page. 0 is the first page
@@ -24,7 +24,6 @@ def bs4_scrape_articles():
     all_articles = []
 
     articles_is_present = True
-
     while articles_is_present:
         html = requests.post("https://scholar.google.com/citations", params=params, headers=headers, timeout=30)
         soup = BeautifulSoup(html.text, "lxml")
@@ -55,20 +54,21 @@ def bs4_scrape_articles():
         else:
             params["cstart"] += 100  # paginate to the next page
 
-    pd.DataFrame(data=all_articles).to_csv(f"google_scholar_{params['user']}_articles.csv", encoding="utf-8", index=False)
+    # pd.DataFrame(data=all_articles).to_csv(f"google_scholar_{params['user']}_articles.csv", encoding="utf-8", index=False)
 
+bs4_scrape_articles()
 
 def serpapi_scrape_articles():
     params = {
         "api_key": os.getenv("API_KEY"),
         "engine": "google_scholar_author",
         "hl": "en",
-        "author_id": "VxOmZDgAAAAJ",
+        "author_id": "cp-8uaAAAAAJ",
         "start": "0",
         "num": "100"
     }
 
-    search = GoogleSearch(params)
+    search = GoogleScholarSearch(params)
 
     all_articles = []
 
@@ -105,4 +105,6 @@ def serpapi_scrape_articles():
         else:
             articles_is_present = False
 
-    pd.DataFrame(data=all_articles).to_csv(f"serpapi_google_scholar_{params['author_id']}_articles.csv", encoding="utf-8", index=False)
+    # pd.DataFrame(data=all_articles).to_csv(f"serpapi_google_scholar_{params['author_id']}_articles.csv", encoding="utf-8", index=False)
+
+# serpapi_scrape_articles()
