@@ -22,14 +22,14 @@ selector = Selector(html.text)
 for cite_by in selector.xpath('//*[@class="gs_fl"]/a[3]/@href'):
     cited_by_link = f"https://scholar.google.com/{cite_by.get()}"
     print(cited_by_link)
-
+# for in range(10)
 # ---------------------------------------------------------------------
 
 params = {
     "api_key": os.getenv("API_KEY"), # SerpApi API key
     "engine": "google_scholar",      # scraping search engine
     "q": "biology",                  # search query
-    "hl": "en"                       # langugage
+    "hl": "en"                       # language
 }
 
 search = GoogleScholarSearch(params)
