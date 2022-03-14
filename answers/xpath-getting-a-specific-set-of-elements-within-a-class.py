@@ -1,4 +1,5 @@
 # https://stackoverflow.com/questions/56621735/xpath-getting-a-specific-set-of-elements-within-a-class/56621951#56621951
+# https://replit.com/@DimitryZub1/xpath-getting-a-specific-set-of-elements-within-a-classs
 
 from parsel import Selector
 from serpapi import GoogleScholarSearch
