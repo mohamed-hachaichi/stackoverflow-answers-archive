@@ -3,7 +3,7 @@ import os
 
 queries = ["moon",
            "pandas",
-           "python",
+           "python_answers",
            "data science",
            "ML",
            "AI",

@@ -19,7 +19,7 @@ from serpapi import GoogleScholarSearch
 params = {
   "api_key": "Your SerpApi API key",
   "engine": "google_scholar",   # parsing engine
-  "q": "intitle:python xpath",  # search query
+  "q": "intitle:python_answers xpath",  # search query
   "hl": "en"                    # language
 }
 

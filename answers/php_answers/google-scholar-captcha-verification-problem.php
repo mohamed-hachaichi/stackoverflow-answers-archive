@@ -8,7 +8,7 @@ require __DIR__ . '/vendor/autoload.php';
 $queries = array(
     "moon",
     "pandas",
-    "python",
+    "python_answers",
     "data science",
     "ML",
     "AI",

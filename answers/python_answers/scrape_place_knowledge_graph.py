@@ -1,4 +1,4 @@
-# https://stackoverflow.com/questions/34479656/scrape-google-with-python-what-is-the-correct-url-for-requests-get
+W# https://stackoverflow.com/questions/34479656/scrape-google-with-python-what-is-the-correct-url-for-requests-get
 # https://replit.com/@DimitryZub1/Scrape-Google-with-Python-What-is-the-correct-URL-for-requ#main.py
 
 from bs4 import BeautifulSoup
