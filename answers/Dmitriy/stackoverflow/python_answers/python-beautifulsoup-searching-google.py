@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 from serpapi import GoogleSearch
 import requests, lxml, os
 
-
 def bs4_scrape():
     with open("company_names.txt", mode="r") as in_file, \
          open("saved_company_names.txt", mode="w") as out_file:
