@@ -1,3 +1,5 @@
+# https://academia.stackexchange.com/questions/132916/what-is-the-most-effective-and-efficient-method-of-searching-multiple-journals-f/183695#183695
+
 import os, json
 from serpapi import GoogleSearch
 from urllib.parse import urlsplit, parse_qsl
