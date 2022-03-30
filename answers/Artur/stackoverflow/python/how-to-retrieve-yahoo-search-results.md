@@ -84,6 +84,7 @@ Example code to integrate:
 from serpapi import YahooSearch
 import os
 
+# You must enter your API_KEY
 params = {
   "api_key": os.getenv("API_KEY"),
   "engine": "yahoo",
