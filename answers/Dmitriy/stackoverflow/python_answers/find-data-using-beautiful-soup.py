@@ -1,3 +1,5 @@
+# https://stackoverflow.com/a/71689142/15164646 
+
 from parsel import Selector
 
 html = """
