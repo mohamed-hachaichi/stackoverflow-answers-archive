@@ -1,4 +1,31 @@
-If you try to print the text of the current selector, then the user will get the combined text from the child selectors and the current selector together. To solve this problem, a loop was used that allows you to remove the text from the child selectors and leave only the text of the current selector.
+If you try to print the text of the current selector, you will get the combined text of the child `<span>` element as well, which is not what you want. To do that, you can use the `h3 > a` selector.
+
+![An illustration of what to get](https://user-images.githubusercontent.com/78694043/161210494-66af1690-382b-43d4-a919-3fb698b272a9.png)
+
+However, when using BeautifulSoup, CSS selector's behavior could be weird, for example:
+
+```python
+# bs4
+
+for result in soup.select(".compTitle.options-toggle"):
+        text = result.select_one("h3 > a").text
+        print(text)
+ 
+#                                                     👇      👇      👇                          
+# www.merriam-webster.com › dictionary › deepDeep Definition & Meaning - Merriam-Webster
+```
+```python
+# parsel
+
+for result in soup.css(".compTitle.options-toggle"):
+        text = result.css("h3 > a::text").get()
+        print(text)
+
+# Deep Definition & Meaning - Merriam-Webster
+```
+This could be because [`parsel` translates every CSS selector query to XPath](https://github.com/scrapy/parsel/blob/f5f73d34ba787ad0c9df25de295de6e196ecd91d/parsel/selector.py#L350-L351) but I'm not sure what is causing such behavior in BeautifulSoup.
+
+Also, make sure you're using [request headers](https://docs.python-requests.org/en/master/user/quickstart/#custom-headers) [`user-agent`](https://developer.mozilla.org/en-US/docs/Glossary/User_agent) to act as a "real" user visit. Because default `requests` `user-agent` is [`python-requests`](https://github.com/psf/requests/blob/589c4547338b592b1fb77c65663d8aa6fbb7e38b/requests/utils.py#L808-L814) and websites understand that it's most likely a script that sends a request. [Check what's your `user-agent`](https://www.whatismybrowser.com/detect/what-is-my-user-agent/).
 
 Code and [full example in online IDE](https://replit.com/@chukhraiartur/how-to-retrieve-yahoo-search-results#main.py):
 
@@ -38,8 +65,6 @@ https://r.search.yahoo.com/_ylt=Awr9GjGgZERiFfEANhtXNyoA;_ylu=Y29sbwNncTEEcG9zAz
 ```
 ____
 
-There is no method in the BeautifulSoup library that allows you to take the text of a given selector without using the text of the child selectors. Therefore, it was decided to use the Parsel library, which has it.
-
 Using [`parsel`](https://parsel.readthedocs.io/en/latest/):
 
 ```python
@@ -76,7 +101,7 @@ ____
 
 Alternatively, you can use [Yahoo! Organic Results API](https://serpapi.com/yahoo-organic-results) from SerpApi. It`s a paid API with the free plan.
 
-The difference is that it will process blocks from Yahoo or other search engines, so the end user doesn't have to write full code, but only needs to think about what data to retrieve.
+The difference is that it will bypass blocks from Yahoo! or other search engines, so the end-user doesn't have to figure out how to do it, maintain the parse, and only think about what data to retrieve instead.
 
 Example code to integrate:
 
