@@ -11,12 +11,14 @@ Two approaches:
 
 ### Folder structure naming convention
 
+Rephrase question to make it easier to search and understand.
+
 ```lang-none
 <author>/
 ├─ <website_where_question_asked>/
 │  ├─ <which_language_used>/
 │  │  ├─ <which_website_to_scrape>/
-│  │  │  ├─ <file_name>
+│  │  │  ├─ <question_file_name>
 
 ----------------------
 
@@ -29,6 +31,8 @@ Dmitriy/
 
 ### File naming convention
 
+Rephrase question to make it easier to search and understand.
+
 ```lang-none
 <website_where_question_asked>_<question>.<file_extension> 
 
@@ -37,6 +41,8 @@ twitter_how_to_scrape_google_trends.py
 ```
 
 ### Branch naming convention
+
+Rephrase question to make it easier to search and understand.
 
 ```lang-none
 <website_where_question_asked>-<question>
