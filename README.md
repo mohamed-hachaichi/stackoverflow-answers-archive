@@ -16,16 +16,16 @@ Rephrase question to make it easier to search and understand.
 ```lang-none
 <author>/
 ├─ <website_where_question_asked>/
-│  ├─ <which_language_used>/
-│  │  ├─ <which_website_to_scrape>/
+│  ├─ <which_website_to_scrape>/
+│  │  ├─ <which_language_used>/
 │  │  │  ├─ <question_file_name>
 
 ----------------------
 
-Dmitriy/
-├─ Stackoverflow/
-│  ├─ Python/
-│  │  ├─ Google_Trends
+dmitriy/
+├─ stackoverflow/
+│  ├─ google_trends/
+│  │  ├─ python
 │  │  │  ├─ stackoverflow_how_to_scrape_google_trends.py
 ```
 
