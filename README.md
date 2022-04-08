@@ -55,11 +55,14 @@ twitter_how_to_scrape_google_trends.md
 
 ### Typical answer layout
 
-Stackoverflow and similar:
+👉 Stackoverflow and similar should have:
+
+- `.md` file that contains answer with code itself.
+- `<any_programming_lang>` file with script code.
+
+Layout:
 
 ```lang-none
-// inside .py or <any_programming_lang> file
-
 # link to the question
 # link to example in the onlie IDE (replit or similar)
 
@@ -70,11 +73,15 @@ Stackoverflow and similar:
 # <disclaimer> 
 ```
 
-Twitter and similar:
+👉 Twitter and similar should have:
+
+- `.md` file of the tweet.
+- `<any_programming_lang>` file with script code that will be shared to online IDE.
+- `GIF`/`Image`/`Video`
+
+Layout:
 
 ```lang-none
-// inside .md or <any_programming_lang> file
-
 # link to the question
 # (optional, if needed) link to example in the onlie IDE (replit or similar)
 
