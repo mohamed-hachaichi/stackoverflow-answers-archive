@@ -58,7 +58,7 @@ twitter_how_to_scrape_google_trends.md
 Stackoverflow and similar:
 
 ```lang-none
-# .py or <any_programming_lang> file
+// inside .py or <any_programming_lang> file
 
 # link to the question
 # link to example in the onlie IDE (replit or similar)
@@ -73,7 +73,7 @@ Stackoverflow and similar:
 Twitter and similar:
 
 ```lang-none
-# .md or <any_programming_lang> file
+// inside .md or <any_programming_lang> file
 
 # link to the question
 # (optional, if needed) link to example in the onlie IDE (replit or similar)
