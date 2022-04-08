@@ -60,12 +60,20 @@ twitter_how_to_scrape_google_trends.md
 - `.md` file that contains answer with code itself.
 - `<any_programming_lang>` file with script code.
 
-Layout:
+Answer file layout:
 
 ```lang-none
 # link to the question
 # link to example in the onlie IDE (replit or similar)
 
+# <code>
+# ... 
+# (optional) <alternative API solution>
+```
+
+Script file layout: 
+
+```lang-none
 # <code>
 # ...
 # <alternative API solution>
@@ -79,11 +87,19 @@ Layout:
 - `<any_programming_lang>` file with script code that will be shared to online IDE.
 - `GIF`/`Image`/`Video`
 
-Layout:
+Tweet layout:
+
+```lang-none
+# <sentence> + <GIF/Image/Video>
+```
+
+Script file layout: 
 
 ```lang-none
 # link to the question
 # (optional, if needed) link to example in the onlie IDE (replit or similar)
 
-# <sentence> + <GIF/Image/Video>
+# <code>
+# ...
+# <alternative API solution>
 ```
