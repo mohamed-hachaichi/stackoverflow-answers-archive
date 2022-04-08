@@ -66,6 +66,8 @@ Answer file layout:
 # link to the question
 # link to example in the onlie IDE (replit or similar)
 
+# <explanation to the answer>
+# ...
 # <code>
 # ... 
 # (optional) <alternative API solution>
