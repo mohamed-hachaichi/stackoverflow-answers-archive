@@ -69,6 +69,8 @@ Answer file layout:
 # <code>
 # ... 
 # (optional) <alternative API solution>
+# ...
+# <disclaimer> 
 ```
 
 Script file layout: 
@@ -77,8 +79,6 @@ Script file layout:
 # <code>
 # ...
 # <alternative API solution>
-# ...
-# <disclaimer> 
 ```
 
 👉 Twitter and similar should have:
