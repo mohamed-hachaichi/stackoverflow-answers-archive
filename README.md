@@ -64,7 +64,7 @@ Answer file layout:
 
 ```lang-none
 # link to the question
-# link to example in the onlie IDE (replit or similar)
+# link to example in the online IDE (replit or similar)
 
 # <explanation to the answer>
 # ...
@@ -99,7 +99,7 @@ Script file layout:
 
 ```lang-none
 # link to the question
-# (optional, if needed) link to example in the onlie IDE (replit or similar)
+# (optional, if needed) link to example in the online IDE (replit or similar)
 
 # <code>
 # ...
