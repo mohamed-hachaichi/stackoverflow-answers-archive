@@ -38,6 +38,8 @@ Also, make sure you're using [request headers](https://docs.python-requests.org/
 
 An error might occur with URLs where you have to verify a captcha or when the link returns an unsuccessful [`HTTP status code`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 
+___
+
 Code and [full example in online IDE](https://replit.com/@chukhraiartur/how-to-retrieve-yahoo-search-results#main.py):
 
 ```python
