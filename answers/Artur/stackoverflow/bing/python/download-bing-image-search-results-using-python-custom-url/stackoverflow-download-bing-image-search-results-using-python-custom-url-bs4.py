@@ -1,7 +1,6 @@
 # https://stackoverflow.com/questions/52015361/download-bing-image-search-results-using-python-custom-url
 # https://replit.com/@chukhraiartur/download-bing-image-search-results-using-python-custom-url#main.py
 
-
 from bs4 import BeautifulSoup
 import requests, lxml, json
 
