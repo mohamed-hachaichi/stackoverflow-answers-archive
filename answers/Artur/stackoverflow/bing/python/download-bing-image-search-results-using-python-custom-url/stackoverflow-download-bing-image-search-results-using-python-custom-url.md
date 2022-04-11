@@ -1,8 +1,8 @@
-To get the URL of an image, you can query and get the URL of the site where the images are located. After that, make requests to these sites and get the URLs of the images.
+To download an image, you need to make a request to the image URL that ends with `.png`, `.jpg` etc.
 
-But you can make things easier. Bing uses a special `"m" attribute` in link selectors that stores the [`JSON format`](https://docs.python.org/3/library/json.html) and the image URL is stored in the `"murl" key`.
+But Bing provides a `"m"` attribute inside the `<a>` element that stores needed data in the [`JSON format`](https://en.wikipedia.org/wiki/JSON) from which you can parse the image URL that is stored in the `"murl"` key and download it afterward.
 
-![Demonstration of uploading files to a folder](https://user-images.githubusercontent.com/81998012/161598302-80ba9b28-6656-4656-a0d5-a6f7188ce0dc.gif)
+![image](https://user-images.githubusercontent.com/78694043/162735146-ad20465f-d48c-478e-84d6-bfe457fa3376.png)
 
 To download all images locally to your computer, you can use 2 methods:
 
@@ -32,11 +32,11 @@ for index, url in enumerate(soup.select(".iusc"), start=1):
     req.urlretrieve(img_url, f"images/{query}_image_{index}.jpg")
 ```
 
-In the first case, a [built-in language feature](https://docs.python.org/3/library/functions.html#open) was used to load the image locally. In the second case, the [`urlretrieve method`](https://docs.python.org/3/library/urllib.request.html#urllib.request.urlretrieve) of the [`urllib.request library`](https://docs.python.org/3/library/urllib.request.html#module-urllib.request) was used.
+In the first case, you can use [context manager `with open()`](https://docs.python.org/3/library/functions.html#open) to load the image locally. In the second case, you can use [`urllib.request.urlretrieve` method](https://docs.python.org/3/library/urllib.request.html#urllib.request.urlretrieve) of the [`urllib.request` library](https://docs.python.org/3/library/urllib.request.html#module-urllib.request).
 
 Also, make sure you're using [request headers](https://docs.python-requests.org/en/master/user/quickstart/#custom-headers) [`user-agent`](https://developer.mozilla.org/en-US/docs/Glossary/User_agent) to act as a "real" user visit. Because default `requests` `user-agent` is [`python-requests`](https://github.com/psf/requests/blob/589c4547338b592b1fb77c65663d8aa6fbb7e38b/requests/utils.py#L808-L814) and websites understand that it's most likely a script that sends a request. [Check what's your `user-agent`](https://www.whatismybrowser.com/detect/what-is-my-user-agent/).
 
-An error might occur with URLs where you have to verify a captcha or when the link returns an unsuccessful [`HTTP status code`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
+Note: An error might occur with the `urllib.request.urlretrieve` method where some of the request has got a captcha or something else that returns an unsuccessful [`status code`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes). The biggest problem is it's hard to test for response code while `requests` provide a [`status_code`](https://docs.python-requests.org/en/master/user/quickstart/#response-status-codes) method to test it.
 
 ___
 
@@ -73,7 +73,7 @@ for index, url in enumerate(soup.select(".iusc"), start=1):
 ```
 ____
 
-Using [`urlretrieve`](https://docs.python.org/3/library/urllib.request.html#urllib.request.urlretrieve).
+Using [`urllib.request.urlretrieve`](https://docs.python.org/3/library/urllib.request.html#urllib.request.urlretrieve).
 
 ```python
 from bs4 import BeautifulSoup
@@ -105,3 +105,8 @@ for index, url in enumerate(soup.select(".iusc"), start=1):
     req.install_opener(opener)
     req.urlretrieve(img_url, f"images/{query}_image_{index}.jpg")
 ```
+____
+
+Output:
+
+![Demonstration of uploading files to a folder](https://user-images.githubusercontent.com/81998012/161598302-80ba9b28-6656-4656-a0d5-a6f7188ce0dc.gif)
