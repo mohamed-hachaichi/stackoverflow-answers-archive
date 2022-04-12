@@ -8,8 +8,8 @@ However, when using BeautifulSoup, CSS selector's behavior could be weird, for e
 # bs4
 
 for result in soup.select(".compTitle.options-toggle"):
-        text = result.select_one("h3 > a").text
-        print(text)
+    text = result.select_one("h3 > a").text
+    print(text)
  
 #                                                     👇      👇      👇                          
 # www.merriam-webster.com › dictionary › deepDeep Definition & Meaning - Merriam-Webster
@@ -18,11 +18,12 @@ for result in soup.select(".compTitle.options-toggle"):
 # parsel
 
 for result in soup.css(".compTitle.options-toggle"):
-        text = result.css("h3 > a::text").get()
-        print(text)
+    text = result.css("h3 > a::text").get()
+    print(text)
 
 # Deep Definition & Meaning - Merriam-Webster
 ```
+
 This could be because [`parsel` translates every CSS selector query to XPath](https://github.com/scrapy/parsel/blob/f5f73d34ba787ad0c9df25de295de6e196ecd91d/parsel/selector.py#L350-L351) but I'm not sure what is causing such behavior in BeautifulSoup.
 
 Also, make sure you're using [request headers](https://docs.python-requests.org/en/master/user/quickstart/#custom-headers) [`user-agent`](https://developer.mozilla.org/en-US/docs/Glossary/User_agent) to act as a "real" user visit. Because default `requests` `user-agent` is [`python-requests`](https://github.com/psf/requests/blob/589c4547338b592b1fb77c65663d8aa6fbb7e38b/requests/utils.py#L808-L814) and websites understand that it's most likely a script that sends a request. [Check what's your `user-agent`](https://www.whatismybrowser.com/detect/what-is-my-user-agent/).
