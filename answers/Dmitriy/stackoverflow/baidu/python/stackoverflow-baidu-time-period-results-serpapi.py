@@ -2,7 +2,7 @@ from serpapi import BaiduSearch
 import json
 
 params = {
-  "api_key": "your serpapi api key",
+  "api_key": "your serpapi api",
   "engine": "baidu",
   "q": "Coffee",
   "lm": "7"
