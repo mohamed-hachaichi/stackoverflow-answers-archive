@@ -3,7 +3,7 @@ from urllib.parse import urlsplit, parse_qsl
 import json
 
 params = {
-  "api_key": "19fb8ffa746a04dee8a59f8ef90772438a757396c129f13686515a9ecbe1e774",
+  "api_key": "your serpapi_api_key",
   "engine": "google",
   "q": "tesla",
   "num": "100"
