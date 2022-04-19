@@ -29,7 +29,7 @@ def serpapi_scrape_all_reviews():
         "api_key": "19fb8ffa746a04dee8a59f8ef90772438a757396c129f13686515a9ecbe1e774",     # your serpapi api key
         "engine": "google_play_product",     # search engine
         "store": "apps",                     
-        "gl": "es",                          # country to search from: Spain
+        "gl": "us",                          # country to search from: Spain
         "product_id": "com.viyatek.ultimatequotes",   # app ID
         "all_reviews": "true"                # show all reviews
     }
