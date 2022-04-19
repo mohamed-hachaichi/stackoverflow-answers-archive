@@ -1,3 +1,5 @@
+# https://stackoverflow.com/questions/29844279/how-to-use-scrapy-to-scrape-google-play-reviews-of-applications
+
 from serpapi import GoogleSearch
 from urllib.parse import urlsplit, parse_qsl
 import json, os
@@ -24,11 +26,11 @@ def serpapi_scrape_reviews():
 def serpapi_scrape_all_reviews():
     # https://docs.python.org/3/library/os.html#os.getenv
     params = {
-        "api_key": os.getenv("API_KEY"),     # your serpapi api key
+        "api_key": "19fb8ffa746a04dee8a59f8ef90772438a757396c129f13686515a9ecbe1e774",     # your serpapi api key
         "engine": "google_play_product",     # search engine
         "store": "apps",                     
         "gl": "es",                          # country to search from: Spain
-        "product_id": "com.nintendo.zara",   # app ID
+        "product_id": "com.viyatek.ultimatequotes",   # app ID
         "all_reviews": "true"                # show all reviews
     }
     
@@ -48,7 +50,9 @@ def serpapi_scrape_all_reviews():
             print(f"\npage #: {index}\n")
             print(json.dumps(review, indent=2))
             
-            if "next" in results.get("serpapi_pagination", []):
-                search.params_dict.update(dict(parse_qsl(urlsplit(results.get("serpapi_pagination").get("next")).query)))
-            else:
-                reviews_is_present = False
+        if "next" in results.get("serpapi_pagination", []):
+            search.params_dict.update(dict(parse_qsl(urlsplit(results.get("serpapi_pagination").get("next")).query)))
+        else:
+            reviews_is_present = False
+            
+serpapi_scrape_all_reviews()
