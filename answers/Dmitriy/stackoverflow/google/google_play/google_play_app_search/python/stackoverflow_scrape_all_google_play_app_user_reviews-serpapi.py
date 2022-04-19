@@ -5,7 +5,7 @@ import json, os
 def serpapi_scrape():
     # https://docs.python.org/3/library/os.html#os.getenv
     params = {
-      "api_key": os.getenv("API_KEY"),                # your serpapi api key
+      "api_key": os.getenv("API_KEY"),     # your serpapi api key
       "engine": "google_play_product",     # search engine
       "store": "apps",                     # 
       "gl": "es",                          # country to search from: Spain
