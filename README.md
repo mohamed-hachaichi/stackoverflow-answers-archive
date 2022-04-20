@@ -48,8 +48,7 @@ twitter_how_to_scrape_google_trends.md
 
 ## Typical answer layout
 
-<details open>
-<summary>👉 Stackoverflow and similar</summary>
+<details><summary>👉 Stackoverflow and similar</summary>
 
 - `.md` file that contains answer with code itself.
 - `<any_programming_lang>` file with script code.
@@ -79,8 +78,7 @@ Script file layout (`<any_programming_lang>`):
 </details>
 
 
-<details open>
-<summary>👉 Twitter and similar</summary>
+<details><summary>👉 Twitter and similar</summary>
 
 - `.md` file of the tweet.
 - `<any_programming_lang>` file with script code that will be shared to online IDE.
