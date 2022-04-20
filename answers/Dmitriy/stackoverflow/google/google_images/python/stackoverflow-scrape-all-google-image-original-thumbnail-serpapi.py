@@ -1,4 +1,4 @@
-# https://qr.ae/pvsjTN
+# https://www.quora.com/How-can-I-scrape-Google-Images
 # https://replit.com/@DimitryZub1/Scrape-All-Google-Images-SerpApi#main.py
 
 from serpapi import GoogleSearch
