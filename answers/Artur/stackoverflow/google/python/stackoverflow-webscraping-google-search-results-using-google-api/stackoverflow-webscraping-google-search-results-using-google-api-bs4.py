@@ -8,7 +8,9 @@ query = input("Enter the query:\n")
 
 # https://docs.python-requests.org/en/master/user/quickstart/#passing-parameters-in-urls
 params = {
-    "q": query
+    "q": query,
+    "hl": "en",  # language
+    "gl": "us"   # country of the search, US -> USA
 }
 
 # https://docs.python-requests.org/en/master/user/quickstart/#custom-headers
@@ -20,8 +22,8 @@ html = requests.get("https://www.google.com/search", params=params, headers=head
 soup = BeautifulSoup(html.text, "lxml")
 
 for result in soup.select(".tF2Cxc"):
-    title = "Title == " + result.select_one("h3").text
-    link = "Link == " + result.select_one("a")["href"]
-    description = "Description == " + result.select_one(".VwiC3b").text
+    title = f'Title: {result.select_one("h3").text}'
+    link = f'Link: {result.select_one("a")["href"]}'
+    description = f'Description: {result.select_one(".VwiC3b").text}'
 
     print(title, link, description, sep="\n", end="\n\n")

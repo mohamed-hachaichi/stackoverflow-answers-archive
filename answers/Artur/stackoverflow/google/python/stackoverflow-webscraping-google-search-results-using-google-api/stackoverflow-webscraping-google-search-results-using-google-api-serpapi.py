@@ -6,15 +6,16 @@ import os
 
 query = input("Enter the query:\n")
 
-# You must enter your API_KEY
 params = {
-  "api_key": os.getenv("API_KEY"),
-  "engine": "google",
-  "q": query
+  # https://docs.python.org/3/library/os.html#os.getenv
+  "api_key": os.getenv("API_KEY"),  # your serpapi api key
+  "engine": "google",               # search engine
+  "q": query                        # search query
+  # other parameters
 }
 
-search = GoogleSearch(params)
-results = search.get_dict()
+search = GoogleSearch(params)  # where data extraction happens on the SerpApi backend
+results = search.get_dict()    # JSON -> Python dict
 
 for result in results["organic_results"]:
     print(result["title"], result["link"], result["snippet"], sep="\n", end="\n\n")

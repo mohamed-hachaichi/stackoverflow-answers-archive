@@ -10,7 +10,6 @@ from bs4 import BeautifulSoup as soup
 from googleapiclient.discovery import build
 
 # Google Personal Search Engine information
-
 my_api_key = "<key>"
 my_cse_id = "<id>"
 
@@ -30,12 +29,12 @@ results = google_search(query, my_api_key, my_cse_id)
 print("\n*********Google Search Results*********\n")
 
 for i in range(len(results)):
-    print("Title == " + results['items'][i]['title'])
-    print("Link == " + results['items'][i]['link'])
+    print(f"Title == {results['items'][i]['title']}")
+    print(f"Link == {results['items'][i]['link']}")
     snippet = results['items'][i]['snippet'].replace('\n', "")
     html_snippet = results['items'][i]['htmlSnippet'].replace('\n', "")
     html_snippet = html_snippet.replace("<b>", "")
     html_snippet = html_snippet.replace("</b>", "")
     html_snippet = html_snippet.replace("<br>", "")
     html_snippet = html_snippet.replace("&nbsp;…", ".")
-    print("Description == " + snippet + html_snippet, end="\n\n")
+    print(f"Description == {snippet}{html_snippet}", end="\n\n")
