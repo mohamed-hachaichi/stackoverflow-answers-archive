@@ -1,3 +1,6 @@
+# https://www.quora.com/How-can-I-scrape-business-data-from-Google-Maps
+# https://replit.com/@DimitryZub1/Scrape-Google-Maps-Business-data-SerpApi#main.py
+
 from serpapi import GoogleSearch
 import json
 
