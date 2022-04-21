@@ -4,7 +4,7 @@ The [`for` statement](https://docs.python.org/3/tutorial/controlflow.html#for-st
 
 I used the second option with the `range()` function, where the variable `i` was used as the iteration number, which corresponds to the indices in the resulting array of values ​​and allows each iteration to output a new value at the index. The [`len()` built-in function](https://docs.python.org/3/library/functions.html#len) is used to count the number of elements in a sequence and return the number to the `range()` function, thus passing in how many times the loop should be iterated.
 
-Below is a modified snippet of your code:
+Below is a modified snippet of your code. I also added [`f-strings` which is a more pythonic way of concatenating strings](https://docs.python.org/3.6/reference/lexical_analysis.html#formatted-string-literals) that looks cleaner:
 
 ```python
 # your code
@@ -21,7 +21,7 @@ for i in range(len(results)):
     print(f"Description == {snippet}{html_snippet}", end="\n\n")
 ```
 
-Variant that does the same but using only the [`Beautiful Soup`](https://beautiful-soup-4.readthedocs.io/en/latest/) library:
+A solution that does the same but using only the [`Beautiful Soup`](https://beautiful-soup-4.readthedocs.io/en/latest/) library:
 
 ```python
 # variant using only the Beautiful Soup library 
@@ -34,13 +34,11 @@ for result in soup.select(".tF2Cxc"):
     print(title, link, description, sep="\n", end="\n\n")
 ```
 
-I decided to present an option using only the `Beautiful Soup` library, since your code uses a lot of libraries that you can do without. I also noticed that you manually remove the tags, although this can be done more easily by selecting the text of the `topmost selector`. This will ignore the inner tags and take their contents.
+I decided to present an option using only the `Beautiful Soup` library, since your code uses a lot of libraries that you can do without. I also noticed that you manually remove the tags, although this can be done more easily by selecting the text of the `.VwiC3b` selector. This will ignore the inner tags and take their contents.
 
 ![An illustration of what to get](https://res.cloudinary.com/dqfrazolx/image/upload/v1650404120/images/VwiC3b_kwe17k.png)
 
 Also, make sure you're using [request headers](https://docs.python-requests.org/en/master/user/quickstart/#custom-headers) [`user-agent`](https://developer.mozilla.org/en-US/docs/Glossary/User_agent) to act as a "real" user visit. Because default `requests` `user-agent` is [`python-requests`](https://github.com/psf/requests/blob/589c4547338b592b1fb77c65663d8aa6fbb7e38b/requests/utils.py#L808-L814) and websites understand that it's most likely a script that sends a request. [Check what's your `user-agent`](https://www.whatismybrowser.com/detect/what-is-my-user-agent/).
-
-Added [`f-string` is a pythonic way of concatenating strings](https://docs.python.org/3.6/reference/lexical_analysis.html#formatted-string-literals) that looks cleaner. 
 
 Code and [full example in online IDE](https://replit.com/@chukhraiartur/stackoverflow-webscraping-google-search-results-using-google#main.py):
 
