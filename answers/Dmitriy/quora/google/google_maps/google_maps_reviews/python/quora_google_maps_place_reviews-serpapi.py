@@ -5,7 +5,6 @@
 from serpapi import GoogleSearch
 import os, json
 
-
 params = {
     # https://docs.python.org/3/library/os.html#os.getenv
     
