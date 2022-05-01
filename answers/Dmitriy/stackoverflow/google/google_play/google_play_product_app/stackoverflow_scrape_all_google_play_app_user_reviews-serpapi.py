@@ -30,7 +30,7 @@ def serpapi_scrape_all_reviews():
         "engine": "google_play_product",     # search engine
         "store": "apps",                     
         "gl": "us",                          # country to search from: Spain
-        "product_id": "com.viyatek.ultimatequotes",   # app ID
+        "product_id": "com.nintendo.zara",   # app ID
         "all_reviews": "true"                # show all reviews
     }
     
