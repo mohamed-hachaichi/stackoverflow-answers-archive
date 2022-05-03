@@ -16,4 +16,4 @@ for result in results['organic_results']:
     link = result.get('link')
     snippet = result.get('snippet')
     
-    print(title, link, snippet, end="\n\n")
+    print(f"{title}\n{link}\n{snippet}\n")
