@@ -23,11 +23,12 @@ def serpapi_scrape_all_author_articles(author_id: str):
         results = search.get_dict()         # JSON -> Python dictionary
 
         for index, article in enumerate(results["articles"], start=1):
-            title = article["title"]
-            link = article["link"]
-            authors = article["authors"]
+            title = article.get("title")
+            link = article.get("link")
+            authors = article.get("authors")
             publication = article.get("publication")
-            citation_id = article["citation_id"]
+            citation_id = article.get("citation_id")
+            year = article.get("year")
 
             print(title)
 
@@ -36,7 +37,8 @@ def serpapi_scrape_all_author_articles(author_id: str):
                 "link": link,
                 "authors": authors,
                 "publication": publication,
-                "citation_id": citation_id
+                "citation_id": citation_id,
+                "year": year
                 })
 
         if "next" in results.get("serpapi_pagination", []):
