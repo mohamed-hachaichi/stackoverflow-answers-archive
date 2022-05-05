@@ -19,22 +19,36 @@ def scrape_all_authors_articles(author_id: str):
 
     articles_is_present = True
     while articles_is_present:
-        html = requests.get("https://scholar.google.com/citations", params=params, headers=headers, timeout=30)
+        html = requests.post("https://scholar.google.com/citations", params=params, headers=headers, timeout=30)
         soup = BeautifulSoup(html.text, "lxml")
 
-        for index, article in enumerate(soup.select("#gsc_a_b .gsc_a_t"), start=1):
-            article_title = article.select_one(".gsc_a_at").text
-            article_link = f'https://scholar.google.com{article.select_one(".gsc_a_at")["href"]}'
-            article_authors = article.select_one(".gsc_a_at+ .gs_gray").text
-            article_publication = article.select_one(".gs_gray+ .gs_gray").text
+        for index, article in enumerate(soup.select(".gsc_a_tr"), start=1):
+            try:
+                article_title = article.select_one(".gsc_a_at").text
+            except: article_title = None
 
-            print(article_title)
+            try:
+                article_link = f'https://scholar.google.com{article.select_one(".gsc_a_at")["href"]}'
+            except: article_link = None
+
+            try:
+                article_authors = article.select_one(".gsc_a_at+ .gs_gray").text
+            except: article_authors = None
+
+            try:
+                article_publication = article.select_one(".gs_gray+ .gs_gray").text
+            except: article_publication = None
+                
+            try:
+                article_year = article.select_one(".gsc_a_hc").text
+            except: article_year = None
 
             all_articles.append({
                 "title": article_title,
                 "link": article_link,
                 "authors": article_authors,
-                "publication": article_publication
+                "publication": article_publication,
+                "article_year": article_year
                 })
 
         # this selector is checking for the .class that contains: "There are no articles in this profile."
