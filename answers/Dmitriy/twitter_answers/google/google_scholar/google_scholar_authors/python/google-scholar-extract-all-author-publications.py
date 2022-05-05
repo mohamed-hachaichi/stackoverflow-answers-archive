@@ -19,7 +19,7 @@ def scrape_all_authors_articles(author_id: str):
 
     articles_is_present = True
     while articles_is_present:
-        html = requests.post("https://scholar.google.com/citations", params=params, headers=headers, timeout=30)
+        html = requests.get("https://scholar.google.com/citations", params=params, headers=headers, timeout=30)
         soup = BeautifulSoup(html.text, "lxml")
 
         for index, article in enumerate(soup.select("#gsc_a_b .gsc_a_t"), start=1):
