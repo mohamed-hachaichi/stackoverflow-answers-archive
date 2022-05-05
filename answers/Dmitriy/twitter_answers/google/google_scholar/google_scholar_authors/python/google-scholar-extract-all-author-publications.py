@@ -73,10 +73,6 @@ for _id in user_ids:
     
 # SerpApi solution
 
-import os
-
-
-
 def serpapi_scrape_all_author_articles(author_id: str):
     params = {
         "api_key": os.getenv("API_KEY"),    # your SerpApi API key
